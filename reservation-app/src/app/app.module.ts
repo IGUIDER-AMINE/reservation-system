@@ -10,6 +10,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { ReservationsComponent } from './reservations/reservations.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
+import { AppErrorsComponent } from './app-errors/app-errors.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import {HttpClientModule} from "@angular/common/http";
     AdminTemplateComponent,
     LoginComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    ReservationsComponent,
+    NotAuthorizedComponent,
+    AppErrorsComponent
   ],
   imports: [
     BrowserModule,
