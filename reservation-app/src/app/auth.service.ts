@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {firstValueFrom} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {AppStateService} from "./services/app-state.service";
-import jwtDecode from "jwt-decode";
+import {jwtDecode} from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,6 @@ export class AuthService {
     let user:any= await firstValueFrom(this.http.get("http://localhost:8089/users/" +username))
     //C'est juste un bricolage de mot de passe : password == atob(user.password). Ce travail doit être fait en back-end.
     if(password==atob(user.password)){
-      // @ts-ignore
       let decodedJwt:any = jwtDecode(user.token); // return jut payload
       this.appState.setAuthState({
         isAuthenticated:true,
