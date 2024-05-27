@@ -12,7 +12,7 @@ import {MatTableDataSource} from "@angular/material/table";
 export class SessionsComponent {
   public sesssions : any;
   public dataSource : any;
-  public displayedColumns = ['id','startTime','endTime','maxReservations'];
+  public displayedColumns = ['id','startTime','endTime','maxReservations','Options'];
 
   @ViewChild(MatPaginator) paginator! : MatPaginator;
   @ViewChild(MatSort) sort! : MatSort;
@@ -32,5 +32,13 @@ export class SessionsComponent {
           console.log(err);
         }
       })
+  }
+
+  handleDelete(element: any) {
+
+  }
+
+  handleEdit(element: any) {
+
   }
 }

@@ -15,4 +15,8 @@ export class SessionServiceService {
   public getAllSessions():Observable<Array<Session>>{
     return this.http.get<Array<Session>>(`${environment.backendHost}/sessions`);
   }
+
+  public saveSession(formData : any):Observable<Session>{
+    return this.http.post<Session>(`${environment.backendHost}/session`,formData);
+  }
 }

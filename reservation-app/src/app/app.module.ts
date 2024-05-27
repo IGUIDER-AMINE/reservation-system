@@ -32,6 +32,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import { UsersComponent } from './users/users.component';
 import { SessionsComponent } from './sessions/sessions.component';
+import { NewSessionComponent } from './new-session/new-session.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { SessionsComponent } from './sessions/sessions.component';
     NotAuthorizedComponent,
     AppErrorsComponent,
     UsersComponent,
-    SessionsComponent
+    SessionsComponent,
+    NewSessionComponent
   ],
   imports: [
     BrowserModule,

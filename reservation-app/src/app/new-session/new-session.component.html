@@ -1,0 +1,37 @@
+<div class="container mb-3 mt-3">
+  <mat-card [formGroup]="sessionFormGroup" class="payment-form">
+    <mat-card-header>
+      <mat-card-title>New Session</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="me-2">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="me-2">
+        <mat-label>Start Time</mat-label>
+        <input matInput type="time" formControlName="startTime">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="me-2">
+        <mat-label>End Time</mat-label>
+        <input matInput type="time" formControlName="endTime">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>max Reservation</mat-label>
+        <input matInput formControlName="maxReservation">
+      </mat-form-field>
+
+    <mat-card-actions>
+      <button (click)="saveSession()" mat-raised-button color="primary">Save Session</button>
+      @if (showProgress){
+        <mat-spinner></mat-spinner>
+      }
+    </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>
