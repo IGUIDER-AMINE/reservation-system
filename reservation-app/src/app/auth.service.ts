@@ -3,13 +3,16 @@ import {firstValueFrom} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {AppStateService} from "./services/app-state.service";
 import {jwtDecode} from "jwt-decode";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor(private http:HttpClient,private appState :AppStateService) { }
+  public username : any;
+  public isAuthenticated : boolean=false;
+  public roles : string[] = [];
+  constructor(private http:HttpClient,private appState :AppStateService,private router : Router) { }
 
 
   async login(username:string,password:string) {
@@ -29,5 +32,12 @@ export class AuthService {
     else{
       return Promise.reject("Bad credentials");
     }
+  }
+
+  logout() {
+    this.isAuthenticated = false;
+    this.roles = [];
+    this.username = undefined;
+    this.router.navigateByUrl("/login");
   }
 }

@@ -1,1 +1,50 @@
-<p>admin-template works!</p>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="myDrawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span style="flex: auto"></span>
+  <button mat-button routerLink="/admin/">Home</button>
+  <button mat-button  routerLink="/admin/">Profile</button>
+  <!-- *ngIf="authService.roles.includes('ADMIN')"-->
+  <button
+    mat-button [matMenuTriggerFor]="importMenu">
+    <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+    Options
+  </button>
+  <mat-menu #importMenu>
+    <button mat-menu-item routerLink="/admin/users">Load Users</button>
+    <button mat-menu-item routerLink="/admin/sessions">Load Session</button>
+    <button mat-menu-item routerLink="/admin/reservations">Reservation</button>
+  </mat-menu>
+  <button mat-button *ngIf="authService.isAuthenticated">
+    {{authService.username}}
+  </button>
+  <button mat-raised-button (click)="logout()">Logout</button>
+</mat-toolbar>
+<mat-drawer-container>
+  <mat-drawer #myDrawer opened="true" mode="side" position="start">
+    <mat-list-item>
+      <button mat-button routerLink="/admin/users">
+        <mat-icon>dashboard</mat-icon>
+        Users
+      </button>
+    </mat-list-item>
+    <mat-list-item>
+      <button mat-button routerLink="/admin/sessions">
+        <mat-icon>dashboard</mat-icon>
+        Sessions
+      </button>
+    </mat-list-item>
+    <mat-list-item>
+      <button mat-button routerLink="/admin/reservations">
+        <mat-icon>dashboard</mat-icon>
+        Reservations
+      </button>
+    </mat-list-item>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="min-height:600px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

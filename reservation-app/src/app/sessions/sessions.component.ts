@@ -1,16 +1,16 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from "@angular/material/table";
+import {Component, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {SessionServiceService} from "../services/session-service.service";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
-  selector: 'app-reservations',
-  templateUrl: './reservations.component.html',
-  styleUrl: './reservations.component.css'
+  selector: 'app-sessions',
+  templateUrl: './sessions.component.html',
+  styleUrl: './sessions.component.css'
 })
-export class ReservationsComponent implements OnInit{
-  public payments : any;
+export class SessionsComponent {
+  public sesssions : any;
   public dataSource : any;
   public displayedColumns = ['id','startTime','endTime','maxReservations'];
 
@@ -23,8 +23,8 @@ export class ReservationsComponent implements OnInit{
     this.sessionService.getAllSessions()
       .subscribe({
         next : data => {
-          this.payments = data;
-          this.dataSource = new MatTableDataSource(this.payments);
+          this.sesssions = data;
+          this.dataSource = new MatTableDataSource(this.sesssions);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
         },
