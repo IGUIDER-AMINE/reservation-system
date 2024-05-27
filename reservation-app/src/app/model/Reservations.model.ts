@@ -5,6 +5,16 @@ export interface Session {
   maxReservations: number;
 }
 
+export interface User {
+  id: number;
+  startTime: Date;
+  endTime: Date;
+  maxReservations: number;
+}
+
+export enum RoleType {
+  ADMIN,USER
+}
 
 /*export interface Payment {
   id : number,
@@ -16,9 +26,7 @@ export interface Session {
   student:Student
 }
 
-export enum PaymentType {
-  CASH,CHECK,TRANSFER,DEPOSIT
-}
+
 
 export enum PaymentStatus {
   CREATED, VALIDATED, REJECTED

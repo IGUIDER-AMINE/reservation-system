@@ -33,6 +33,7 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 import { UsersComponent } from './users/users.component';
 import { SessionsComponent } from './sessions/sessions.component';
 import { NewSessionComponent } from './new-session/new-session.component';
+import { NewUserComponent } from './new-user/new-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { NewSessionComponent } from './new-session/new-session.component';
     AppErrorsComponent,
     UsersComponent,
     SessionsComponent,
-    NewSessionComponent
+    NewSessionComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,

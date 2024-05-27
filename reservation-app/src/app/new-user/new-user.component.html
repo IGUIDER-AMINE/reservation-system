@@ -1,0 +1,34 @@
+<div class="container mb-3 mt-3">
+  <mat-card [formGroup]="sessionFormGroup" class="payment-form">
+    <mat-card-header>
+      <mat-card-title>New User</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="me-2">
+        <mat-label>User Name</mat-label>
+        <input matInput formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="me-2">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="me-2">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="role">
+          @for (r of roleType; track r){
+            <mat-option [value]="r">{{r}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button (click)="saveSession()" mat-raised-button color="primary">Save User</button>
+        @if (showProgress){
+          <mat-spinner></mat-spinner>
+        }
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>
