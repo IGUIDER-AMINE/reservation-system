@@ -1,4 +1,4 @@
-package ma.enset.projetbackend.security;
+package sdia.reservationbackend.security;
 
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
 import org.springframework.beans.factory.annotation.Value;

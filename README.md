@@ -1,6 +1,10 @@
 <h1>IGUIDER AMINE </h1>
 <h1>Master : SDIA </h1>
 <h1>Projet : Système de réservation</h1>
+<p>
+    back-end : Spring
+    Front-end : Angular & BootStrap
+</p>
 <h2>Diagramme class :</h2>
 <img src="captures/class.png">
 <h2>DataBase :</h2>
