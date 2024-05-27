@@ -36,7 +36,6 @@ public class ReservationServiceImpl implements ReservationService{
                 .collect(Collectors.toList());
         return UserDTOS;
     }
-
     @Override
     public List<ReservationDTO> ReservationList() {
         List<Reservation> reservations = reservationsRepository.findAll();
@@ -45,7 +44,6 @@ public class ReservationServiceImpl implements ReservationService{
                 .collect(Collectors.toList());
         return ReservationDTOS;
     }
-
     @Override
     public List<SessionDTO> SessionList() {
         List<Session> sessions = sessionsRepository.findAll();
@@ -54,7 +52,6 @@ public class ReservationServiceImpl implements ReservationService{
                 .collect(Collectors.toList());
         return SessionDTOS;
     }
-
     @Override
     public UserDTO getUser(Long userId) throws UserNotFoundException {
         User user = usersRepository.findById(userId)
