@@ -129,4 +129,9 @@ public class ReservationServiceImpl implements ReservationService{
     public void deleteSession(Long sessionId) {
         sessionsRepository.deleteById(sessionId);
     }
+
+    @Override
+    public UserDTO getJuryMember(Long sessionId, Long userId) {
+        return null;
+    }
 }

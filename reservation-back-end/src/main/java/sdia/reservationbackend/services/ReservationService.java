@@ -35,5 +35,7 @@ public interface ReservationService {
     void deleteUser(Long userId);
     void deleteReservation(Long reservationId);
     void deleteSession(Long sessionId);
+
+    UserDTO getJuryMember(Long sessionId, Long userId);
     //AccountHistoryDTO getAccountHistory(String accountId, int page, int size) throws BankAccountNotFoundException;
 }

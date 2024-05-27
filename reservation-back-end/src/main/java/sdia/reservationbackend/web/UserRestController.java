@@ -3,11 +3,7 @@ package sdia.reservationbackend.web;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import sdia.reservationbackend.dtos.ReservationDTO;
-import sdia.reservationbackend.dtos.SessionDTO;
 import sdia.reservationbackend.dtos.UserDTO;
-import sdia.reservationbackend.exceptions.ReservationNotFoundException;
-import sdia.reservationbackend.exceptions.SessionNotFoundException;
 import sdia.reservationbackend.exceptions.UserNotFoundException;
 import sdia.reservationbackend.services.ReservationService;
 
