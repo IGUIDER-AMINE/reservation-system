@@ -8,6 +8,7 @@ import java.util.List;
 public class UserDTO {
     private Long id;
     private String username;
+    private String password;
     private Role role;
     private List<SessionDTO> sessionsAsJury;
 

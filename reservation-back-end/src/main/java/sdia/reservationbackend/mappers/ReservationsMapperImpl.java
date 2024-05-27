@@ -1,6 +1,7 @@
 package sdia.reservationbackend.mappers;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 import sdia.reservationbackend.dtos.ReservationDTO;
 import sdia.reservationbackend.dtos.SessionDTO;
 import sdia.reservationbackend.dtos.UserDTO;
@@ -8,6 +9,7 @@ import sdia.reservationbackend.entites.Reservation;
 import sdia.reservationbackend.entites.Session;
 import sdia.reservationbackend.entites.User;
 
+@Service
 public class ReservationsMapperImpl {
     public UserDTO fromUser(User user){
         UserDTO userDTO=new UserDTO();
